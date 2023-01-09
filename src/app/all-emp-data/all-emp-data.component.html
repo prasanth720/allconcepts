@@ -1,0 +1,62 @@
+<h1 style="color: black;">Add Employee data</h1> 
+<div style="float:right"> {{logeduser}} <button (click)="logout()">Logout</button></div>
+<div class="style">
+    <form [formGroup]="form1" style=" width:10%">
+        <div class="grid-container">
+            <div class="grid-item"><label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="First name" formControlName="Firstname">
+            </div>
+            <div class="grid-item"> <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="last name" formControlName="Lastname">
+            </div>
+            <div class="grid-item"> <label for="empid">empid</label>
+                <input type="text" id="empid" name="empid" placeholder="empid" formControlName="empid">
+            </div>
+            <div class="grid-item"> <label for="phonenumber">phone number</label>
+                <input type="text" id="phonenumber" name="phonenumber" placeholder="phonenumber"
+                    formControlName="phonennumber">
+            </div>
+            <div class="grid-item"> <label for="address">address</label>
+                <input type="text" id="address" name="address" placeholder="address" formControlName="address"></div>
+            <div class="grid-item"><label for="department">department</label>
+                <input type="text" id="department" name="department" placeholder="department" formControlName="department"></div>
+            <div class="grid-item"> <label for="fname">Date of joining</label>
+                <input type="date" id="fname"  name="doj" placeholder="Date of joining" formControlName="doj"></div>
+            <div class="grid-item"><label for="country">Country</label><br>
+                <select id="country" name="country" formControlName="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="India">India</option>
+                </select></div>
+            
+        </div>
+        <button type="submit" (click)="submit()">submit</button>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>Sno</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>empid</th>
+        <th>phonennumber</th>
+        <th>DateOfBirth</th>
+        <th>address</th>
+        <th>department</th>
+        <th>country</th>
+    </tr>
+    <tr *ngFor="let data of alldata;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{data.Firstname}}</td>
+        <td>{{data.Lastname}}</td>
+        <td>{{data.empid}}</td>
+        <td>{{data.phonennumber}}</td>
+        <td>{{data.doj}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.department}}</td>
+        <td>{{data.country}}</td>
+    </tr>
+
+</table>
+

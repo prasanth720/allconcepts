@@ -1,0 +1,111 @@
+
+    <div class="grid-container">
+      
+        <div class="grid-item">
+            <form class="form " [formGroup]="form">
+            <div class=" p-fluid ">
+                <div class="col-12 md-12 sm-12 lg-12 ">
+                    <h2 style="color: white;">Create User </h2>
+                </div>
+                <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                   
+                    <input type="text" pInputText class="p-inputtext-sm" formControlName="eid" maxlength="16"
+                        id="integeronly" placeholder="Employee Id">
+                    <div *ngIf="form.controls.eid.touched && form.controls.eid.invalid" style="color: red;">
+                        Employee id is required</div>
+                    <div *ngIf="form.controls.eid.errors?.pattern" style="color: red;">Enter only numbers</div>
+                    <div *ngIf="form.controls.eid.errors?.maxlength" style="color: red;">please enter 15 digits
+                        only</div>
+                </div>
+                <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                   
+                    <input type="text" pInputText class="p-inputtext-sm" maxlength="16" placeholder="username"
+                        formControlName="username">
+
+                    <div *ngIf="form.controls.username.touched && form.controls.username.invalid"
+                        style="color: red;">Please enter username</div>
+                    <div *ngIf="form.controls.username.errors?.pattern" style="color: red;">Enter only alphabets
+                    </div>
+                    <div *ngIf="form.controls.username.errors?.maxlength" style="color: red;">please enter 15
+                        characters only </div>
+                </div>
+                <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                   
+                    <input type="text" pInputText class="p-inputtext-sm" formControlName="password"
+                        maxlength="16" id="integeronly" placeholder="Password">
+                    <div *ngIf="form.controls.password.touched && form.controls.password.invalid"
+                        style="color: red;">password is required</div>
+                    <div *ngIf="form.controls.password.errors?.pattern" style="color: red;">Enter only numbers
+                    </div>
+                    <div *ngIf="form.controls.password.errors?.maxlength" style="color: red;">please enter 15
+                        characters only</div>
+                </div>
+                <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                    
+                    <input type="text" pInputText class="p-inputtext-sm" maxlength="16" placeholder="Team Name"
+                        formControlName="Team">
+                    <div *ngIf="form.controls.Team.touched && form.controls.Team.invalid" style="color: red;">
+                        Please enter Team Name</div>
+                    <div *ngIf="form.controls.Team.errors?.pattern" style="color: red;">Enter only alphabets
+                    </div>
+                    <div *ngIf="form.controls.Team.errors?.maxlength" style="color: red;">please enter 15
+                        characters only </div>
+                </div>
+                <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                   
+                    <input type="text" pInputText class="p-inputtext-sm" maxlength="16"
+                        placeholder="Phonenumber" formControlName="phonenumber">
+                    <div *ngIf="form.controls.phonenumber.touched && form.controls.phonenumber.invalid"
+                        style="color: red;">Please enter phonenumber</div>
+                    <div *ngIf="form.controls.phonenumber.errors?.pattern" style="color: red;">Enter only
+                        numbers</div>
+                    <div *ngIf="form.controls.phonenumber.errors?.maxlength" style="color: red;">please enter 10
+                        digits only </div>
+                </div>
+
+
+            </div>
+            <button (click)="submit()">click</button>
+        </form></div>
+        <div class="grid-item"> <form [formGroup]="signupform" class="form">
+            <div class="p-col-12 p-md-6 p-sm-1 p-lg-6 ">
+
+                <div class=" stylings  p-fluid">
+                    <h2 style="color: white;">Miracle Software Systems</h2>
+                    <div class="border">
+
+                        <div>
+
+                            <input pInputText type="text" id="username" placeholder="Username"
+                                formControlName="username">
+                            <div *ngIf="signupform.controls.username.touched && signupform.controls.username.invalid"
+                                style="color: red;">Please enter username</div>
+                            <div *ngIf="signupform.controls.username.errors?.pattern" style="color: red;">Enter
+                                only alphabets</div>
+                            <div *ngIf="signupform.controls.username.errors?.maxlength" style="color: red;">
+                                please enter 15 characters only </div>
+                        </div>
+                        <div>
+
+                            <input pInputText type="text" id="Password" placeholder="Password"
+                                formControlName="password">
+                            <div *ngIf="signupform.controls.password.touched && signupform.controls.password.invalid"
+                                style="color: red;">password is required</div>
+                            <div *ngIf="signupform.controls.password.errors?.pattern" style="color: red;">must
+                                enter password</div>
+
+                        </div>
+                        <div>
+                            <button pButton type="button" (click)="signup()" label="Login"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </form></div>
+ 
+      </div>
+
+    
